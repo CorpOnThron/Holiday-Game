@@ -11,12 +11,13 @@ public class DefaultChaseProfile : ChaseProfile
     public bool chase(List<Unit_Logic> targets, Stats unitStats) //returns true if should be attacked, false if should not
     {
         if (availibleTarget(targets, unitStats)) {
+            Debug.Log("Can attack");
             return true;
         }
         else
         {
             unitStats.unitState = UnitState.chase;
-            Vector3.MoveTowards(unitStats.position.position, findClosestTarget(targets, unitStats), unitStats.speed);
+            unitStats.position.position = Vector3.MoveTowards(unitStats.position.position, findClosestTarget(targets, unitStats), unitStats.speed * Time.deltaTime);
             return false;
         }
     }

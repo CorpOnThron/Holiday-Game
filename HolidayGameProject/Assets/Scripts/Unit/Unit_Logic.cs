@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Unit_Logic : MonoBehaviour
@@ -22,8 +21,9 @@ public class Unit_Logic : MonoBehaviour
             //main unit loop
             if (targets.Count > 0)
             {
-                if (unitStats.chaseProfile.chase(targets, unitStats))
-                    unitStats.fightProfile.attack(targets, unitStats);
+                bool shouldAttack = unitStats.chaseProfile.chase(targets, unitStats);
+
+                if (shouldAttack) unitStats.fightProfile.attack(targets, unitStats);
             }
             else
             {
@@ -44,5 +44,16 @@ public class Unit_Logic : MonoBehaviour
         unitStats.TakeDamage(damage);
     }
 
-    
+    public void DetectTarget(Unit_Logic target) 
+    {
+
+        targets.Add(target);
+
+        Debug.Log("added!" + targets);
+    }
+
+    public void ForgetTarget(Unit_Logic target)
+    {
+        targets.Remove(target);
+    }
 }
