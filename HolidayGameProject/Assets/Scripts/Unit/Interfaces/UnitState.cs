@@ -8,5 +8,6 @@ public enum UnitState
     move,
     chase,
     casting,
-    idle
+    idle,
+    dead
 }

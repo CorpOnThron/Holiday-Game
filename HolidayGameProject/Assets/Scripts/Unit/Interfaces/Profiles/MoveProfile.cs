@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface MoveProfile
 {
-    public void move(Transform target, Stats unitStats);
+    void move(Transform target, Stats unitStats);
 }

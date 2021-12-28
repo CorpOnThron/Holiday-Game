@@ -5,21 +5,19 @@ using UnityEngine;
 public class Stats : MonoBehaviour
 {
 
-    double health;
-    double damage;
-    double speed;
-    double range;
-    UnitState unitState;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public double health;
+    public double damage;
+    public float speed;
+    public double attackRange;
+    public UnitState unitState;
+    public Transform position;
+    public bool dead = false;
+    public FightProfile fightProfile = new DafaultFightProfile();
+    public MoveProfile moveProfile = new DefaultMoveProfile();
+    public ChaseProfile chaseProfile = new DefaultChaseProfile();
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(double damage)
     {
-        
+        health -= damage;
     }
 }

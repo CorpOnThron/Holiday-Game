@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface FightProfile
 {
-    void attack(Unit_Logic[] targets, Stats unitStats);
+    void attack(List<Unit_Logic> targets, Stats unitStats);
 }

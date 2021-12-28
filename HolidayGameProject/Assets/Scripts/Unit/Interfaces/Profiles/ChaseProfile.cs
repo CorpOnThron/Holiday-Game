@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface ChaseProfile 
 {
-    void chase(Transform target, Stats unitStats);
+    bool chase(List<Unit_Logic> targets, Stats unitStats);
 }

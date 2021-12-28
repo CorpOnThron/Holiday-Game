@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IdleProfile 
 {
-    public void idle(Stats unitStats);
+    void idle(Stats unitStats);
 }
